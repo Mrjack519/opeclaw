@@ -1,0 +1,11 @@
+{
+  "name": "openclaw-deploy",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "openclaw gateway --verbose"
+  },
+  "dependencies": {
+    "openclaw": "latest"
+  }
+}
