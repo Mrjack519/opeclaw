@@ -6,6 +6,7 @@
     "start": "bash /app/start.sh"
   },
   "dependencies": {
+    "node-telegram-bot-api": "^1.1.2",
     "openclaw": "latest"
   }
 }
