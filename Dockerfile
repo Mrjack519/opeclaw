@@ -11,7 +11,7 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 RUN npm install -g openclaw
-RUN pip3 install yt-dlp
+RUN pip3 install yt-dlp --break-system-packages
 
 WORKDIR /app
 
