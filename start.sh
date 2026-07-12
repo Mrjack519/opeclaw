@@ -14,6 +14,7 @@ openclaw onboard \
   --zai-api-key "$ZAI_API_KEY" \
   --gateway-bind auto \
   --skip-bootstrap \
+  --skip-health \
   --skip-skills
 
 mkdir -p ~/.openclaw/workspace/skills
