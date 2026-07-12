@@ -3,48 +3,31 @@ const { exec } = require('child_process');
 const fs = require('fs');
 
 const TOKEN = process.env.TELEGRAM_TOKEN;
+
+if (!TOKEN) {
+  console.error('TELEGRAM_TOKEN not set!');
+  process.exit(1);
+}
+
 const bot = new TelegramBot(TOKEN, { polling: true });
 
-// Voice reply function
 async function sendVoiceReply(chatId, message) {
   const audioFile = `/tmp/voice_${Date.now()}.mp3`;
-
-  return new Promise((resolve, reject) => {
-    exec(`sag -v Adam --format mp3_44100_128 --no-play -o "${audioFile}" "${message}"`, (err) => {
-      if (err) {
-        console.error('Sag error:', err);
-        reject(err);
-        return;
-      }
-
-      const fileStream = fs.createReadStream(audioFile);
-      bot.sendAudio(chatId, fileStream, {})
-        .then(() => {
-          fs.unlink(audioFile, () => {});
-          resolve();
-        })
-        .catch(reject);
-    });
+  
+  exec(`sag -v Adam --no-play -o "${audioFile}" "${message}"`, (err) => {
+    if (!err) {
+      bot.sendAudio(chatId, fs.createReadStream(audioFile));
+      fs.unlink(audioFile, () => {});
+    }
   });
 }
 
-// Bot handlers
-bot.onText(/\/start/, async (msg) => {
+bot.on('message', (msg) => {
   const chatId = msg.chat.id;
-  const reply = "Salam! Main Adam hon. Kya help chahiye?";
-  
-  await bot.sendMessage(chatId, reply);
-  await sendVoiceReply(chatId, reply);
+  const text = msg.text || '';
+
+  bot.sendMessage(chatId, "Salam! Main Adam hon.");
+  sendVoiceReply(chatId, "Salam! Main Adam hon. Kya help chahiye?");
 });
 
-bot.onText(/(.+)/, async (msg) => {
-  const chatId = msg.chat.id;
-  const userMessage = msg.text;
-  
-  const aiReply = `Aapne likha: ${userMessage}`;
-  
-  await bot.sendMessage(chatId, aiReply);
-  await sendVoiceReply(chatId, aiReply);
-});
-
-console.log('Bot started...');
+console.log('Bot running...');
