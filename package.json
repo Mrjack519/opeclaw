@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "start": "openclaw gateway --verbose"
+    "start": "bash /app/start.sh"
   },
   "dependencies": {
     "openclaw": "latest"
