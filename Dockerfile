@@ -8,6 +8,7 @@ RUN apt-get update && apt-get install -y \
     curl \
     wget \
     jq \
+    gh \
     && rm -rf /var/lib/apt/lists/*
 
 RUN npm install -g openclaw
