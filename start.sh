@@ -1,2 +1,3 @@
 #!/bin/bash
-exec openclaw
+echo "OpenClaw ready"
+sleep infinity
