@@ -1,2 +1,2 @@
 #!/bin/bash
-node agent.js
+npm start
