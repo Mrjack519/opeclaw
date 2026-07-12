@@ -14,6 +14,9 @@ RUN apt-get update && apt-get install -y \
 RUN npm install -g openclaw
 RUN pip3 install yt-dlp --break-system-packages
 
+# Install sag (ElevenLabs TTS CLI)
+RUN curl -fsSL https://github.com/steipete/sag/releases/download/v0.2.2/sag_linux_amd64.tar.gz | tar -xz -C /usr/local/bin/ && chmod +x /usr/local/bin/sag
+
 WORKDIR /app
 
 COPY package*.json ./
