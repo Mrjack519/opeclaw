@@ -39,6 +39,10 @@ openclaw skills install shopify-theme-pro || true
 openclaw skills install node-connect || true
 openclaw skills install Aliexpress || true
 openclaw skills install cn-ecommerce-search || true
+openclaw skills install inventory-manager || true
+openclaw skills install jpeng-payment-processor || true
+openclaw skills install logistics-tracking || true
+openclaw skills install solo-review || true
 mkdir -p /tmp/youtube-mcp-server && cd /tmp/youtube-mcp-server && npm pack zubeid-youtube-mcp-server@1.0.0 --silent && tar -xzf zubeid-youtube-mcp-server-1.0.0.tgz && cp -r package/dist . 2>/dev/null; cd /app
 
 openclaw config set agents.defaults.model.primary "zai/glm-4.5-flash"
