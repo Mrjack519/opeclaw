@@ -25,6 +25,8 @@ cp -r /app/skills-custom/youtube ~/.openclaw/workspace/skills/ 2>/dev/null || tr
 cp -r /app/skills-custom/product-description ~/.openclaw/workspace/skills/ 2>/dev/null || true
 cp -r /app/skills-custom/profit-calculator ~/.openclaw/workspace/skills/ 2>/dev/null || true
 cp -r /app/skills-custom/competitor-tracker ~/.openclaw/workspace/skills/ 2>/dev/null || true
+cp -r /app/skills-custom/voice-reply ~/.openclaw/workspace/skills/ 2>/dev/null || true
+cp -r /app/skills-custom/voice-listen ~/.openclaw/workspace/skills/ 2>/dev/null || true
 
 openclaw skills install youtube || true
 
