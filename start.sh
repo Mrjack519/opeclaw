@@ -18,6 +18,7 @@ openclaw onboard \
   --skip-skills
 
 mkdir -p ~/.openclaw/workspace/skills
+echo "Always reply in the same language the user writes in. If the user writes in Roman Urdu or Hinglish, reply in Roman Urdu, not English." >> ~/.openclaw/workspace/AGENTS.md
 
 cp -r /app/skills-custom/brevo-email ~/.openclaw/workspace/skills/ 2>/dev/null || true
 cp -r /app/skills-custom/google-trends ~/.openclaw/workspace/skills/ 2>/dev/null || true
