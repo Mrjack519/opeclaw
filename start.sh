@@ -44,6 +44,9 @@ openclaw config set messages.tts.provider "elevenlabs"
 openclaw config set messages.tts.providers.elevenlabs.apiKey '${ELEVENLABS_API_KEY}'
 openclaw config set messages.tts.providers.elevenlabs.speakerVoiceId "pNInz6obpgDQGcFmaJgB"
 openclaw config set messages.tts.providers.elevenlabs.modelId "eleven_multilingual_v2"
+openclaw config set tools.media.audio.enabled true
+openclaw config set tools.media.audio.models '[{"provider":"groq","model":"whisper-large-v3-turbo"}]'
+openclaw config set messages.tts.auto "inbound"
 
 exec openclaw gateway \
   --allow-unconfigured \
