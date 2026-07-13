@@ -1,23 +1,24 @@
 ---
 name: competitor-tracker
-description: Check a competitor's Shopify/ecommerce store page for product pricing, titles, and details using browser automation. Use when the user gives a store URL and wants to see what products/prices are listed.
+description: Get REAL product pricing data from any Shopify competitor store using their public products.json endpoint. Use when the user gives a Shopify store domain and wants actual current product/price data.
 metadata: {"clawdbot":{"emoji":"🕵️"}}
 ---
 
-# Competitor Store Tracker
+# Competitor Store Tracker (Shopify)
 
-Use the browser tool to visit a competitor's store URL and extract useful business intelligence.
+Most Shopify stores publicly expose a JSON product feed. Use this to get REAL data — never guess or use memory.
 
 ## Instructions
 
-When given a store URL (or product page URL):
-1. Use the browser tool to navigate to the URL
-2. Extract: product title, price, any discount/sale badges, product description highlights, review count/rating if visible
-3. If it's a store homepage, list the top 5-8 featured/bestselling products with prices
-4. Note any pricing patterns (e.g., psychological pricing like $29.99, bundle offers, free shipping threshold)
-5. Summarize findings in a clean table
+Given a store domain (e.g. "gymshark.com"), always actually execute this shell command via the bash/shell tool — never just describe it or guess data from memory:
+
+node -e 'fetch("https://STORE_DOMAIN/products.json?limit=20").then(r=>r.json()).then(d=>console.log(JSON.stringify(d.products.map(p=>({title:p.title,price:p.variants[0].price,vendor:p.vendor})),null,2))).catch(e=>console.error("Error:",e.message))'
+
+Replace STORE_DOMAIN with the actual domain (no https://, no trailing slash).
+
+If this returns an error or empty data, tell the user the store has disabled public JSON access — do not fabricate data.
 
 ## Output format
 
-Present as a short table: Product | Price | Notes
-Then a 2-3 sentence summary of pricing strategy observed (useful for competitive positioning).
+Present real results as a table: Product | Price | Vendor
+Then summarize pricing patterns from the ACTUAL data returned.
