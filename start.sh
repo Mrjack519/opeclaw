@@ -23,6 +23,7 @@ cp -r /app/skills-custom/brevo-email ~/.openclaw/workspace/skills/ 2>/dev/null |
 cp -r /app/skills-custom/google-trends ~/.openclaw/workspace/skills/ 2>/dev/null || true
 cp -r /app/skills-custom/youtube ~/.openclaw/workspace/skills/ 2>/dev/null || true
 cp -r /app/skills-custom/product-description ~/.openclaw/workspace/skills/ 2>/dev/null || true
+cp -r /app/skills-custom/profit-calculator ~/.openclaw/workspace/skills/ 2>/dev/null || true
 
 openclaw skills install youtube || true
 
