@@ -11,6 +11,7 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 RUN npm install -g openclaw
+RUN npm install -g zubeid-youtube-mcp-server
 RUN pip3 install yt-dlp --break-system-packages
 
 WORKDIR /app
