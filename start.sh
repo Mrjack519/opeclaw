@@ -31,6 +31,7 @@ openclaw config set models.providers.groq.baseUrl "https://api.groq.com/openai/v
 openclaw config set models.providers.groq.api "openai-completions"
 openclaw config set models.providers.groq.apiKey '${GROQ_API_KEY}'
 openclaw config set agents.defaults.imageModel "groq/meta-llama/llama-4-scout-17b-16e-instruct"
+openclaw config set models.providers.groq.models '[{"id":"meta-llama/llama-4-scout-17b-16e-instruct","name":"Llama 4 Scout","input":["text","image"],"contextWindow":131072,"maxTokens":8192,"api":"openai-completions"}]'
 openclaw config set channels.telegram.enabled true
 openclaw config set channels.telegram.botToken "$TELEGRAM_BOT_TOKEN"
 openclaw config set channels.telegram.dmPolicy pairing
