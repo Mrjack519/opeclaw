@@ -30,6 +30,15 @@ cp -r /app/skills-custom/voice-reply ~/.openclaw/workspace/skills/ 2>/dev/null |
 cp -r /app/skills-custom/voice-listen ~/.openclaw/workspace/skills/ 2>/dev/null || true
 
 openclaw skills install youtube || true
+openclaw skills install price-hunter || true
+openclaw skills install python-debugpy || true
+openclaw skills install seo || true
+openclaw skills install shopify-ads-helper || true
+openclaw skills install shopify-helper || true
+openclaw skills install shopify-theme-pro || true
+openclaw skills install node-connect || true
+openclaw skills install Aliexpress || true
+openclaw skills install cn-ecommerce-search || true
 mkdir -p /tmp/youtube-mcp-server && cd /tmp/youtube-mcp-server && npm pack zubeid-youtube-mcp-server@1.0.0 --silent && tar -xzf zubeid-youtube-mcp-server-1.0.0.tgz && cp -r package/dist . 2>/dev/null; cd /app
 
 openclaw config set agents.defaults.model.primary "zai/glm-4.5-flash"
