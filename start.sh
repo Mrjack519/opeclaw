@@ -29,6 +29,7 @@ openclaw config set agents.defaults.model.primary "zai/glm-4.5-flash"
 openclaw config set channels.telegram.enabled true
 openclaw config set channels.telegram.botToken "$TELEGRAM_BOT_TOKEN"
 openclaw config set channels.telegram.dmPolicy pairing
+openclaw config set tools.profile "full"
 
 exec openclaw gateway \
   --allow-unconfigured \
