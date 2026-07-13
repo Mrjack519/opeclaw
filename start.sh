@@ -40,6 +40,10 @@ openclaw config set channels.telegram.enabled true
 openclaw config set channels.telegram.botToken "$TELEGRAM_BOT_TOKEN"
 openclaw config set channels.telegram.dmPolicy pairing
 openclaw config set tools.profile "full"
+openclaw config set messages.tts.provider "elevenlabs"
+openclaw config set messages.tts.providers.elevenlabs.apiKey '${ELEVENLABS_API_KEY}'
+openclaw config set messages.tts.providers.elevenlabs.speakerVoiceId "pNInz6obpgDQGcFmaJgB"
+openclaw config set messages.tts.providers.elevenlabs.modelId "eleven_multilingual_v2"
 
 exec openclaw gateway \
   --allow-unconfigured \
