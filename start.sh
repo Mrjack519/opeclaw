@@ -30,6 +30,7 @@ cp -r /app/skills-custom/voice-reply ~/.openclaw/workspace/skills/ 2>/dev/null |
 cp -r /app/skills-custom/voice-listen ~/.openclaw/workspace/skills/ 2>/dev/null || true
 
 openclaw skills install youtube || true
+mkdir -p /tmp/youtube-mcp-server && cd /tmp/youtube-mcp-server && npm pack zubeid-youtube-mcp-server@1.0.0 --silent && tar -xzf zubeid-youtube-mcp-server-1.0.0.tgz && cp -r package/dist . 2>/dev/null; cd /app
 
 openclaw config set agents.defaults.model.primary "zai/glm-4.5-flash"
 openclaw config set models.providers.groq.baseUrl "https://api.groq.com/openai/v1"
