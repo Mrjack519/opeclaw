@@ -4,4 +4,5 @@ mkdir -p ~/.openclaw/workspace && cat /app/config/AGENTS.md >> ~/.openclaw/works
 openclaw skills install clawpify --acknowledge-clawhub-risk || true
 openclaw skills install solo-review --acknowledge-clawhub-risk || true
 openclaw skills install track17 || true
+openclaw config set agents.defaults.model '{"primary":"zai/glm-4.5-flash"}' --strict-json --merge || true
 exec openclaw gateway --allow-unconfigured
