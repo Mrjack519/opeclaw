@@ -1,4 +1,4 @@
-FROM node:22.19.0
+FROM node:22.22.3
 
 RUN apt-get update && apt-get install -y \
     python3 \
