@@ -1,2 +1,2 @@
 #!/bin/bash
-exec openclaw
+exec openclaw --non-interactive --accept-risk
