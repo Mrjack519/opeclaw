@@ -1,2 +1,2 @@
 #!/bin/bash
-exec openclaw gateway
+exec openclaw gateway --allow-unconfigured
