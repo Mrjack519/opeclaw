@@ -1,4 +1,4 @@
 #!/bin/bash
-openclaw skills install clawpify || true
-openclaw skills install solo-review || true
+openclaw skills install clawpify --acknowledge-clawhub-risk || true
+openclaw skills install solo-review --acknowledge-clawhub-risk || true
 exec openclaw
