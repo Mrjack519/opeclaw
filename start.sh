@@ -67,3 +67,4 @@ exec openclaw gateway \
   --auth token \
   --token "$OPENCLAW_GATEWAY_TOKEN" \
   --verbose
+openclaw skills install clawpify || true
